@@ -31,6 +31,12 @@ for module in *; do
 		continue;
 	fi
 
+	# run build script if provided
+	if [ -x "$module/build.sh" ]; then
+		echo "Building dotfiles for $module"
+		(cd "$module" && ./build.sh)
+	fi
+
 	echo "Installing dotfiles for $module"
 
 	# install dotfiles - back up existing ones
