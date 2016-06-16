@@ -1,0 +1,32 @@
+[core]
+	whitespace = trailing-space,space-before-tab,indent-with-non-tab
+	pager = "diff-so-fancy | LESSKEY=~/.dotfiles/git/lesskey less --tabs=8 -RFXq"
+
+[alias]
+	fixup = !sh -c 'git commit --fixup=$1' -
+	squash = !sh -c 'git commit --squash=$1' -
+	ri = rebase --interactive --autosquash
+	rc = rebase --continue
+	stat = diff --stat
+	sl = log --oneline
+	buildtest = !sh -c 'git-build-test $*' -
+	lines = -c core.pager=less log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+
+[diff]
+	renames = true
+	compactionHeuristic = true
+
+[diff "hex"]
+	textconv = hexdump -C
+
+[diff-so-fancy]
+	markEmptyLines = false
+
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+
+[include]
+	 path = ~/.gitconfig.secret
