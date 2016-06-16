@@ -20,7 +20,7 @@ BACKUPS="$ROOT/backups/$(date +%s)/"
 mkdir -p "$BACKUPS"
 
 cd "$ROOT"
-for module in *; do
+for module in configs/* configs-private/*; do
 	# not a module - skip
 	if [ ! -d "$module" ]; then
 		continue;
