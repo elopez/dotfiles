@@ -1,6 +1,6 @@
 [core]
 	whitespace = trailing-space,space-before-tab,indent-with-non-tab
-	pager = "diff-so-fancy | LESSKEY=~/.dotfiles/git/lesskey less --tabs=8 -RFXq"
+	pager = "diff-so-fancy | LESSKEY=~/.dotfiles/configs/git/lesskey less --tabs=8 -RFXq"
 
 [alias]
 	fixup = !sh -c 'git commit --fixup=$1' -
@@ -29,4 +29,5 @@
 	newHighlight = green bold 22
 
 [include]
-	 path = ~/.gitconfig.secret
+	path = ~/.gitconfig.private
+	path = ~/.gitconfig.secret
