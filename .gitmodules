@@ -1,3 +1,4 @@
 [submodule "configs-private"]
 	path = configs-private
 	url = https://github.com/elopez/dotfiles-private.git
+	update = rebase
