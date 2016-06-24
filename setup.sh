@@ -55,6 +55,12 @@ for module in configs/* configs-private/*; do
 			mv "$DEST" "$BACKUPS/"
 		fi
 
+		# if destination directory doesn't exist, create it
+		DESTDIR=$(dirname "$DEST")
+		if [ ! -d "$DESTDIR/" ]; then
+			mkdir -vp "$DESTDIR"
+		fi
+
 		# link the dotfile
 		ln -vs "$ORIG" "$DEST"
 	done		
