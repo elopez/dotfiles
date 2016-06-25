@@ -1,2 +1,2 @@
-j noaction /\^(commit|(added|deleted|modified):)\\s\nn\eu
-J noaction /\^(commit|(added|deleted|modified):)\\s\nN\eu
+j noaction /\^(commit|(added|deleted|modified):)\\s\nn
+J noaction /\^(commit|(added|deleted|modified):)\\s\nN
