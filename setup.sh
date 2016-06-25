@@ -5,7 +5,7 @@ set -e
 #  * git
 #  * sh
 
-ROOT=$(cd $(dirname $0); git rev-parse --show-toplevel)
+ROOT=$(cd "$(dirname "$0")"; git rev-parse --show-toplevel)
 
 # To support dotfiles referencing other scripts and files
 # without needing to copy them, we need a standard path
@@ -40,10 +40,10 @@ for module in configs/* configs-private/*; do
 	echo "Installing dotfiles for $module"
 
 	# install dotfiles - back up existing ones
-	for dotfile in $(cat "$module/dotfiles"); do
+	while read -r dotfile; do
 		MODULE="$ROOT/$module"
-		ORIG="$MODULE/$(echo $dotfile | cut -f1 -d:)"
-		DEST="$HOME/$(echo $dotfile | cut -f2 -d:)"
+		ORIG="$MODULE/$(echo "$dotfile" | cut -f1 -d:)"
+		DEST="$HOME/$(echo "$dotfile" | cut -f2 -d:)"
 
 		# if destination is unset, use default
 		if [ "$DEST" = "$HOME/" ]; then
@@ -63,5 +63,5 @@ for module in configs/* configs-private/*; do
 
 		# link the dotfile
 		ln -vs "$ORIG" "$DEST"
-	done		
+	done < "$module/dotfiles"
 done
