@@ -10,3 +10,8 @@
 [submodule "nanorc"]
 	path = configs/nano/nanorc
 	url = https://github.com/scopatz/nanorc.git
+
+[submodule "prezto"]
+	path = configs/zsh/prezto
+	url = https://github.com/elopez/prezto.git
+	update = rebase

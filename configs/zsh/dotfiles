@@ -1,0 +1,7 @@
+prezto/runcoms/zprofile:.zprofile
+prezto/runcoms/zpreztorc:.zpreztorc
+prezto/runcoms/zshrc:.zshrc
+prezto/runcoms/zlogin:.zlogin
+prezto/runcoms/zlogout:.zlogout
+prezto/runcoms/zshenv:.zshenv
+prezto/:.zprezto
