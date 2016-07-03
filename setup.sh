@@ -51,7 +51,7 @@ for module in configs/* configs-private/*; do
 		fi
 
 		# if dotfile already exists, back it up
-		if [ -f "$DEST" ] || [ -L "$DEST" ]; then
+		if [ -f "$DEST" ] || [ -L "$DEST" ] || [ -d "$DEST" ]; then
 			mv "$DEST" "$BACKUPS/"
 		fi
 
