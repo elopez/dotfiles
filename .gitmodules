@@ -2,16 +2,20 @@
 	path = configs-private
 	url = https://github.com/elopez/dotfiles-private.git
 	update = rebase
+	branch = master
 
 [submodule "diff-so-fancy"]
 	path = configs/git/fancy
 	url = https://github.com/so-fancy/diff-so-fancy.git
+	tag = v1.1.0
 
 [submodule "nanorc"]
 	path = configs/nano/nanorc
 	url = https://github.com/scopatz/nanorc.git
+	branch = master
 
 [submodule "prezto"]
 	path = configs/zsh/prezto
 	url = https://github.com/elopez/prezto.git
 	update = rebase
+	branch = master
